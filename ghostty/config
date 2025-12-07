@@ -1,5 +1,5 @@
 # ----------------------------
-# Keybindings (valid syntax)
+# Keybindings
 # ----------------------------
 keybind = "cmd+shift+c=copy_to_clipboard"
 keybind = "cmd+shift+v=paste_from_clipboard"
@@ -9,7 +9,20 @@ keybind = "cmd+enter=toggle_fullscreen"
 # macOS behavior
 # ----------------------------
 macos-option-as-alt = true
-
 font-size = 14
 theme = catppuccin-mocha.conf
 shell-integration = zsh
+shell-integration-features = false
+
+
+# ----------------------------
+# Clipboard
+# ----------------------------
+clipboard-read = allow
+clipboard-write = allow
+
+# ----------------------------
+# Window settings
+# ----------------------------
+confirm-close-surface = false
+window-save-state = never

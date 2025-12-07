@@ -1,0 +1,161 @@
+add_newline = false
+command_timeout = 1000
+palette = "catppuccin_mocha"
+
+# Minimal left prompt
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$character"""
+
+# Enhanced right prompt with useful info
+right_format = """
+$cmd_duration\
+$nodejs\
+$python\
+$rust\
+$golang\
+$java\
+$docker_context\
+$package\
+$time"""
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+vicmd_symbol = '[N](bold yellow)'
+
+[directory]
+style = "blue bold"
+truncation_length = 3
+truncate_to_repo = true
+fish_style_pwd_dir_length = 1
+
+[directory.substitutions]
+'~/tests/starship-custom' = 'work-project'
+"Documents" = "\U000f0219 "
+"Downloads" = "\U000f0ab2 "
+"Music" = "\U000f0001 "
+"Pictures" = "\U000f003e "
+
+[git_branch]
+symbol = "\U0000e0a0 "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold mauve"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold red"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[cmd_duration]
+min_time = 500
+format = '[$duration]($style) '
+style = "bold yellow"
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = "bold white"
+time_format = "%T"
+
+# Language/Tool versions
+[nodejs]
+symbol = "\U0000e718 "
+format = '[$symbol($version )]($style)'
+style = "bold green"
+
+[python]
+symbol = "\U0000e73c "
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+
+[rust]
+symbol = "\U0000e7a8 "
+format = '[$symbol($version )]($style)'
+style = "bold red"
+
+[golang]
+symbol = "\U000fcd1a "
+format = '[$symbol($version )]($style)'
+style = "bold cyan"
+
+[java]
+symbol = "\U0000e738 "
+format = '[$symbol($version )]($style)'
+style = "bold red"
+
+[docker_context]
+symbol = "\U000f0308 "
+format = '[$symbol$context]($style) '
+style = "bold blue"
+only_with_files = true
+
+[package]
+symbol = "\U0001f4e6 "
+format = '[$symbol$version]($style) '
+style = "bold peach"
+display_private = false
+
+# Battery (useful for laptops)
+[battery]
+full_symbol = "\U0001f50b"
+charging_symbol = "⚡"
+discharging_symbol = "\U0001f480"
+format = '[$symbol$percentage]($style) '
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+# AWS
+[aws]
+symbol = "\U0000e7ad "
+format = '[$symbol($profile )(\($region\) )]($style)'
+style = "bold yellow"
+
+# Catppuccin Mocha palette
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
